@@ -2,7 +2,7 @@
 
 ## Calculate area of Mandlebrot in parallel by OpemMP and MPI.
 
-
+mpicc -> sudo apt-get install libopenmpi-dev
 ### To run only openMP file
 - Compile with fopenmp flag
 ```
