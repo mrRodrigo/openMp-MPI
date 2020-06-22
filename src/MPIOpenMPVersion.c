@@ -31,10 +31,9 @@ int main(int argc, char *argv[])
 
     start = MPI_Wtime();
 
-    #pragma omp parallel for private(ztemp, c, z, stop) shared(numoutside)
+    #pragma omp parallel for private(ztemp, c, z, stop) schedule(guided)
     for (i = currentProcessID; i < NPOINTS; i += countP){
         
-        #pragma omp parallel for private(ztemp, c, z, stop) shared(numoutside)
         for (j = 0; j < NPOINTS; j++){
 
             c.real = -2.0 + 2.5 * (double)(i) / (double)(NPOINTS) + 1.0e-7;
